@@ -1,0 +1,4 @@
+*.sh text eol=lf
+*.service text eol=lf
+*.md text eol=lf
+.env.monitor.example text eol=lf

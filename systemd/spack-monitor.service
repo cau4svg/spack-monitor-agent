@@ -1,0 +1,19 @@
+[Unit]
+Description=Spack Monitor Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/spack-monitor
+EnvironmentFile=-/opt/spack-monitor/.env.monitor
+ExecStart=/bin/bash /opt/spack-monitor/monitor.sh
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
